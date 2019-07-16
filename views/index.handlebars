@@ -1,0 +1,75 @@
+<!-- ======================================= Row 1 ======================================= -->
+<div class="row">
+    <!-- ++++++++++++++++++++++++++++++++ left col ++++++++++++++++++++++++++++++++ -->
+    <div class="col-sm-4 left-side">
+        <!-- burger.gif -->
+        {{!-- <img src="./assets/img/burger.gif" class="wow slideInRight burger-gif" data-wow-delay='1s'> --}}
+        <img src="./assets/img/burger.gif" class="burger-gif">
+
+        <!-- ==================== Sub-Row ==================== -->
+        <div class="row">
+            <!-- ++++++++++++++ Sub-Col box-l ++++++++++++++ -->
+            <div class="col-10 box-l">
+                <i class="fas fa-receipt"> devoured</i>
+                <hr>
+                <ul>
+                    {{#each burgerInDB}}
+                    {{#if devoured}}
+                    <li class="list">
+                        {{burger_name}}
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ++++++++++++++++++++++++++++++++ right col ++++++++++++++++++++++++++++++++ -->
+    <div class="col-sm-8 right-side">
+        <!-- header -->
+        <div class="header-word"><i class="fas fa-hamburger"></i> Isaac's</div>
+        <div class="sub-word hvr-bob">Homemade Burger with 100% Fresh Meat !!</div>
+
+        <!-- ((((((((((((input & submit))))))))))))  -->
+        <form class="newForm">
+            <div class="form-group">
+                <label for="burgerInput" class="hvr-icon-down wow fadeInDown">Customize Your Burger ↷</label><br>
+                <input type="text" id="burgerInput" class="wow fadeIn" data-wow-delay="0.5s" placeholder=" Hamburger" name="name"><br>
+                <button type="submit" id="submit" class="btn btn-warning wow fadeInUp">
+                    SU<i class="fas fa-hamburger"></i>MIT
+                </button>
+            </div>
+        </form>
+
+        <!-- ==================== Sub-Row ==================== -->
+        <div class="row">
+            <!-- ++++++++++++++ Sub-Col box-r ++++++++++++++ -->
+            <div class="col-sm-6 wow fadeIn box-r">
+                <i class="fas fa-utensils"> waiting to be devoured</i>
+                <hr>
+                <ul>
+                    {{#each burgerInDB}}
+                    {{#unless devoured}}
+                    <li class="list">
+                        {{burger_name}}
+
+                        <button class="btn btn-success devour" data-id="{{id}}">
+                            <i class="fas fa-utensils"></i> devour it!
+                        </button>
+                    </li>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- ======================================= footer ======================================= -->
+<footer>
+    <hr>
+    <div>Copyright &copy; 2019 <i class="fas fa-hamburger"></i> Jerry Dai</div>
+</footer>

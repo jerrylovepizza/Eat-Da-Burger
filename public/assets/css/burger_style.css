@@ -1,0 +1,171 @@
+/* ------------------------Page "fade-in"------------------- */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@-o-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@-ms-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+body {
+    animation: fade-in .7s linear 1;
+    -webkit-animation: fade-in .7s linear 1;
+    -moz-animation: fade-in .7s linear 1;
+    -o-animation: fade-in .7s linear 1;
+    -ms-animation: fade-in .7s linear 1;
+    background: black !important;
+}
+.container {
+    background: black;
+}
+
+/* ============= left ============= */
+.left-side{
+    background-image: url("../img/bg4.png");
+    background-repeat:no-repeat;
+    background-position:-100px 800px;
+    /* height: 2000px; */
+}
+/* animate gif */
+.burger-gif{
+    width: 100%;
+    margin:0 20px 22px;
+}
+/* order history box */
+.box-l{
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(14, 9, 0);
+    border-color: white;
+    border-radius: 10px;
+    padding: 20px 5px 50px;
+    margin:0 50px 0;
+}
+
+/* ============= right ============= */
+.right-side{
+    background-image: url("../img/burger.png");
+    background-repeat:no-repeat;
+    background-position:365px 30px;
+    /* height: 1400px; */
+}
+/* header */
+.header-word {
+    color: rgb(255, 184, 78);
+    font-family: 'Shojumaru', cursive;
+    font-size: 60px;
+    margin: 30px 15px 20px;
+}
+.sub-word {
+    color: rgb(28, 129, 160);
+    font-family: 'Rock Salt', cursive;
+    font-size: 23px;
+    font-weight: bolder;
+    margin: 0 0 50px 15px;
+}
+/* customize burger */
+label, #burgerInput, #submit {
+    width: 45%;
+    padding: 10px;
+    margin: 22px 25px 0;
+    font-size: 22px;
+    text-align: center;
+}
+label {
+    color: rgb(255, 255, 255) !important;
+    border: solid 1px;
+    border-radius: 50px 50px 10px 10px;
+}
+#burgerInput {
+    color: #F80;
+    font-weight: bolder;
+    font-style: italic;
+    border-radius: 25px;
+}
+#submit {
+    border-radius: 10px 10px 50px 50px;
+    z-index: 10;
+    margin: 30px 25px;
+}
+
+@media (max-width:992px){
+    label, #burgerInput, #submit {
+        width: 70%;
+    }
+}
+@media (max-width:576px){
+    label, #burgerInput, #submit {
+        width: 90%;
+    }
+}
+/* processing box */
+.box-r{
+    background-color: olive;
+    border-radius: 10px;
+    padding: 20px 5px 50px;
+    margin: 0 40px 0;
+    overflow: hidden;
+}
+.devour {
+    position: absolute;
+    right: 5%;
+    float: right;
+    font-size: 10px !important;
+    padding: 5px;
+}
+
+/* ============= foot ============= */
+footer {
+    position: relative;
+    bottom: 10px;
+    width: 100%;
+    color: rgb(255, 166, 0, .7);
+    font-family: 'Rock Salt', cursive;
+    font-size: 10px;
+    text-align: center;
+}
+hr{
+    border: 1px solid !important;
+    border-color: rgb(255, 166, 0, .3) !important;
+}
+
+.list {
+    padding: 10px 0;
+    border-bottom: dotted 2px;
+}

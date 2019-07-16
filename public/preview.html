@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Eat-Da-Burger</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- style css -->
+	<link rel="stylesheet" type="text/css" media="screen" href="./assets/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="./assets/css/burger_style.css" />
+	<!-- CSS animation library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Rock+Salt|Shojumaru" rel="stylesheet">
+	<link rel="icon" type="image/png" href="./assets/img/ico.png">
+
+	<!-- ============================ JS CDN =============================== -->
+	<!-- jquery & javascript -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<!-- Link and activate WOW.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+	<script>new WOW().init();</script>
+</head>
+
+<body>
+	<!-- ============================ Row 1 ============================ -->
+	<div class="row">
+		<!-- ============== left col ============== -->
+		<div class="col-sm-4 left-side">
+			<!-- burger.gif -->
+			<img src="./assets/img/burger.gif" class="wow slideInRight burger-gif" data-wow-delay='1s'>
+
+			<!--  form 1  -->
+			<div class="row">
+				<div class="col-10 wow fadeIn box-l" data-wow-delay='2s'>
+					<form action="" method="post" class="form-l"></form>
+					<P><i class="fas fa-receipt"> Order History</i></P>
+					<hr>
+					<ul>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- ============== right col ============== -->
+		<div class="col-sm-8 wow fadeIn right-side" data-wow-delay='2s'>
+			<!-- header -->
+			<div class="header-word"><i class="fas fa-hamburger"></i> Jerry's</div>
+			<div class="sub-word hvr-bob">Homemade Burger with 100% Fresh Meat !!</div>
+
+			<!-- input & submit  -->
+			<form>
+				<div class="form-group">
+					<label for="burgerInput" class="hvr-icon-down">Customize Your Burger ↷</label><br>
+					<input type="text" placeholder=" Hamburger" id="burgerInput">
+					<br>
+					<button class="btn btn-warning" id="submit" type="submit" name="action">
+						SU<i class="fas fa-hamburger"></i>MIT
+					</button>
+				</div>
+			</form>
+
+			<!--  form 2  -->
+			<div class="row">
+				<div class="col-sm-6 wow fadeIn box-r">
+					<form action="" method="post" class="form-r"></form>
+					<P><i class="fas fa-utensils"> Processing</i></P>
+					<hr>
+					<ul>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ============================ Row 2 ============================ -->
+	<div class="row">
+		<div class="col-sm-12">
+			<ul>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+	<!--  combo part  -->
+	<!-- <div class="row">
+				<div class="col-sm-12">
+					<div class="combo cb1 hvr-back-pulse"> <p> Monster Combo</p>
+					<img src="./assets/img/cb1.png"> New</div>
+					<div> Chicken Bacon <br>
+					<img src="./assets/img/cb2.png" > New</div>
+					<div> Brunchy <br>
+					<img src="./assets/img/cb3.png" ></div>
+					<div> Mighty Fine <br>
+					<img src="./assets/img/cb4.png" ></div>
+				</div>
+			</div> -->
+
+	<!-- ============== footer ============== -->
+	<footer>
+		<hr>
+		<div>Copyright &copy; 2019 <i class="fas fa-hamburger"></i> Jerry Dai</div>
+	</footer>
+</body>
+
+</html>
