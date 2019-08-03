@@ -1,53 +1,41 @@
-// Import Model (burger CRUD functions by using ORM logic)
-// =============================================================
-const burger = require("../models/burger.js");
+var express = require("express");
 
-// Controller (routers)
-// =============================================================
-const express = require("express");
-const router = express.Router();
+var router = express.Router();
+var burger = require("../models/burger.js");
 
-// get request
-router.get("/", function (req, res) {
-  // take all MySQL burgers data to html(handlebars) through burger.all model ("SELECT * FROM table")
-  // ======== burger.all: function (cb){} ========
-  burger.all(function (data) {
-    let hbsObject = {
-      burgerInDB: data
-    };
-    console.log("CONTROLLER: GET ", hbsObject);
-    res.render("index", hbsObject);
-    // (render -- handlebars)
+// get route -> index
+router.get("/", function(req, res) {
+  res.redirect("/burgers");
+});
+
+router.get("/burgers", function(req, res) {
+  // express callback response by calling burger.selectAllBurger
+  burger.all(function(burgerData) {
+    // wrapper for orm.js that using MySQL query callback will return burger_data, render to index with handlebar
+    res.render("index", { burger_data: burgerData });
   });
 });
 
-// post request
-router.post("/api/burgers", function (req, res) {
-  // appending new burger data to MySQL burgers through burger.create model("INSERT INTO table (cols) VALUES (vals)")
-  // ======== burger.create: function (cols, vals, cb){} ========
-  burger.create(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function (result) {
-    // Send back the ID of the new quote
-    console.log("CONTROLLER: POST ", "\n--burger_name: ", req.body.burger_name, "\n--devoured: ", req.body.devoured, "\n--result: ", result);
-    res.json({ id: result.insertId });
+// post route -> back to index
+router.post("/burgers/create", function(req, res) {
+  // takes the request object using it as input for burger.addBurger
+  burger.create(req.body.burger_name, function(result) {
+    // wrapper for orm.js that using MySQL insert callback will return a log to console,
+    // render back to index with handle
+    console.log(result);
+    res.redirect("/");
   });
 });
 
-// put request
-router.put('/api/burgers/:id', function (req, res) {
-  let idInDB = 'id = ' + req.params.id;
-
-  // update existing burger data in MySQL burgers through burger.update model("UPDATE table SET col = val WHERE id = num")
-  // ======== burger.update: function (objColVals, condition, cb) {} ========
-  burger.update(req.body, idInDB, function (result) {
-    if (result.changedRows === 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    }
-    console.log("CONTROLLER: PUT ", result);
-    res.status(200).end();
+// put route -> back to index
+router.put("/burgers/:id", function(req, res) {
+  burger.update(req.params.id, function(result) {
+    // wrapper for orm.js that using MySQL update callback will return a log to console,
+    // render back to index with handle
+    console.log(result);
+    // Send back response and let page reload from .then in Ajax
+    res.sendStatus(200);
   });
 });
 
-// Export Controller (routers)
-// =============================================================
 module.exports = router;
