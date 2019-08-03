@@ -1,32 +1,24 @@
-// Import Config (ORM CRUD functions)
-// =============================================================
-const orm = require("../config/orm.js");
+var orm = require("../config/orm.js");
 
-// Model (burger CRUD model by using ORM logic)
-// =============================================================
-let burger = {
-    all: function (cb) {
-        orm.all("burgers", function (res) {
-            cb(res);
-            console.log("MODEL: orm.all")
-        });
-    },
-
-    create: function (cols, vals, cb) {
-        orm.create("burgers", cols, vals, function (res) {
-            cb(res);
-            console.log("MODEL: orm.create")
-        });
-    },
-
-    update: function (objColVals, condition, cb) {
-        orm.update("burgers", objColVals, condition, function (res) {
-            cb(res);
-            console.log("MODEL: orm.update")
-        });
-    },
+var burger = {
+  all: function(cb) {
+    orm.all("burgers", function(res) {
+      cb(res);
+    });
+  },
+  create: function(name, cb) {
+    orm.create("burgers", [
+      "burger_name", "devoured"
+    ], [
+      name, false
+    ], cb);
+  },
+  update: function(id, cb) {
+    var condition = "id=" + id;
+    orm.update("burgers", {
+      devoured: true
+    }, condition, cb);
+  }
 };
 
-// Export Model (burger CRUD functions by using ORM logic)
-// =============================================================
 module.exports = burger;
