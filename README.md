@@ -11,8 +11,8 @@ https://secret-eyrie-16630.herokuapp.com/
 ![concert](./public/assets/img/burger1.png)
 
 Eat-Da-Burger! built with 
-- [x]Node.js 
-- [x]Express.js
+- [x] Node.js 
+- [x] Express.js
 
 Author
 Jerry Dai
